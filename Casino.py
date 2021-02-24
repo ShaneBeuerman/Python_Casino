@@ -1,12 +1,21 @@
 #Casino
+from Deck import Deck
 
 money = 500
+
+def Cards():
+
+    deck = Deck()
+    deck.shuffle()
 
 while money > 0:
     print("You have ", money, " dollars.")
     print("Which game do yo want to play? Pleae type response exactly")
-    choice = input("| Slots | Keno | Exit |")
-    if choice == "Exit":
+    choice = input("| Cards | Slots | Keno | Exit |")
+    if choice == "Cards":
+        print("You have selected cards")
+        Cards()
+    elif choice == "Exit":
         print("Goodbye")
         break
     elif choice == "Slots":

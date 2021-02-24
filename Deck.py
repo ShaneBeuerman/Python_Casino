@@ -19,8 +19,3 @@ class Deck:
     def printDeck(self):
         for i in Deck.deck:
             print(i.suit, i.value)
-
-d = Deck()
-d.test()
-d.shuffle()
-d.printDeck()
