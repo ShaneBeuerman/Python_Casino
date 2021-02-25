@@ -7,6 +7,7 @@ def Cards():
 
     deck = Deck()
     deck.shuffle()
+    deck.printDeck()
 
 while money > 0:
     print("You have ", money, " dollars.")

@@ -1,4 +1,5 @@
 from Card import Card
+import random
 
 class Deck:
     test = "text"
@@ -10,11 +11,12 @@ class Deck:
             for j in suits:
                 Deck.deck.append(Card(i, j))
 
-    def test(self):
-        print("test")
-
     def shuffle(self):
         print("Shuffling")
+        n = len(Deck.deck)
+        for i in range(0,n):
+            rand = random.randint(0, n-1)
+            Deck.deck[i], Deck.deck[rand] = Deck.deck[rand], Deck.deck[i]
 
     def printDeck(self):
         for i in Deck.deck:
