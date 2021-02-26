@@ -1,6 +1,7 @@
 #Casino
 from Deck import Deck
 from Keno import Keno
+from Slot_Machine import slotmachine
 
 money = 500
 
@@ -17,7 +18,9 @@ def playKeno():
     game.markBoard()
     game.match()
     
-    
+def playSlots():
+    slots = slotmachine()
+    slots.play()
 
 while money > 0:
     print("You have ", money, " dollars.")
@@ -31,6 +34,7 @@ while money > 0:
         break
     elif choice == "Slots":
         print("You have chosen the slot machine")
+        playSlots()
     elif choice == "Keno":
         print("You have chosen to play keno")
         playKeno()
