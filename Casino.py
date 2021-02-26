@@ -1,13 +1,23 @@
 #Casino
 from Deck import Deck
+from Keno import Keno
 
 money = 500
 
-def Cards():
+def playCards():
 
     deck = Deck()
     deck.shuffle()
     deck.printDeck()
+
+def playKeno():
+    game = Keno()
+    game.printBoard()
+    game.chooseCard()
+    game.markBoard()
+    game.match()
+    
+    
 
 while money > 0:
     print("You have ", money, " dollars.")
@@ -15,7 +25,7 @@ while money > 0:
     choice = input("| Cards | Slots | Keno | Exit |")
     if choice == "Cards":
         print("You have selected cards")
-        Cards()
+        playCards()
     elif choice == "Exit":
         print("Goodbye")
         break
@@ -23,6 +33,7 @@ while money > 0:
         print("You have chosen the slot machine")
     elif choice == "Keno":
         print("You have chosen to play keno")
+        playKeno()
     else:
         print("Sorry, but your choice wasn't accepted. Try again.")
         
