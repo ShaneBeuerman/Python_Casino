@@ -6,7 +6,7 @@ class wheel:
         value = random.randint(0,5)
         self.value = value
         symbols = ["Free", 1, 2, 3, 4, 5]
-        print(symbols[value], end="")
+        print(symbols[value], end=" ")
 
 class slotmachine:
     def play(self):

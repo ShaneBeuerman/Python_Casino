@@ -19,11 +19,30 @@ def playKeno():
     game.match()
     
 def playSlots():
+    global money
+    print("You have", money, "dollars")
+    while True:
+        wager = input("Would you like to pay 5, 10, 50, or 100 dollars to play the slotmachine?")
+        try:
+            wager = int(wager)
+        except ValueError:
+            print("Sorry, not an acceptable input")
+            continue
+        if wager > money:
+            print("Sorry, you don't have enough money")
+        elif wager != 5 and wager != 10 and wager != 50 and wager != 100:
+            print("Sorry, you can't bet that much money.")
+        else:
+            print("Thank you for your payment")
+            money = money - wager
+            break
+        
     slots = slotmachine()
     slots.play()
 
+
 while money > 0:
-    print("You have ", money, " dollars.")
+    print("You have", money, "dollars.")
     print("Which game do yo want to play? Pleae type response exactly")
     choice = input("| Cards | Slots | Keno | Exit |")
     if choice == "Cards":
