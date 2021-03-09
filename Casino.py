@@ -38,7 +38,10 @@ def playSlots():
             break
         
     slots = slotmachine()
-    slots.play()
+    winnings = slots.play(wager)
+    print("Winnings are", winnings)
+    money += winnings
+
 
 
 while money > 0:
