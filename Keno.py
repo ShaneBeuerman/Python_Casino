@@ -33,8 +33,37 @@ class Keno:
             Keno.values.append(Keno.value)
         print(Keno.values)
 
-    def match(self):
+    def match(self, wager):
+        count = 0
         for i in Keno.card:
             if(i in Keno.values):
-                Keno.count = Keno.count + 1
-        print(Keno.count)
+                count = count + 1
+        print(count, "Match")
+        Keno.card.clear()
+        if count == 1:
+            print("You win half your wager back")
+            return wager / 2
+        elif count == 2:
+            print("You win half your wager back")
+            return wager / 2
+        elif count == 3:
+            print("You win your wager back")
+            return wager
+        elif count == 4:
+            print("You win three times your wager back")
+            return wager * 3
+        elif count == 5:
+            print("You win six times your wager back")
+            return wager * 6
+        elif count == 6:
+            print("You win ninteen times your wager back")
+            return wager * 19
+        elif count == 7:
+            print("You win ninety times your wager back")
+            return wager * 90
+        elif count == 8:
+            print("You win seven hundred twenty times your wager back")
+            return wager * 720
+        else:
+            print("I'm sorry, you lose.")
+            return 0            

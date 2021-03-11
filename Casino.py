@@ -12,11 +12,29 @@ def playCards():
     deck.printDeck()
 
 def playKeno():
+    global money
+    print("You have", money, "dollars")
+    while True:
+        wager = input("Would you like to pay ten dollars to play keno? y/n")
+        if wager == "y":
+            print("Let's play")
+            wager = 10
+            money = money - wager
+            break
+        elif wager == "n":
+            print("Okay, we'll return to the beginning.")
+            return
+        else:
+            print("Sorry, not acceptable input.")
+            print("Try y for yes and n for no.")
+    print("Wager is", wager)
     game = Keno()
     game.printBoard()
     game.chooseCard()
     game.markBoard()
-    game.match()
+    winnings = game.match(wager)
+    print("Winnings are", winnings)
+    money += winnings
     
 def playSlots():
     global money
