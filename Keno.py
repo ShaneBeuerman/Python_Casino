@@ -33,6 +33,17 @@ class Keno:
             Keno.values.append(Keno.value)
         print(Keno.values)
 
+    def payout(self):
+        print("Here are the payouts:")
+        print("Match 1 or 2: 0.5 * wager")
+        print("Match 3: 1 * Wager")
+        print("Match 4: 3 * Wager")
+        print("Match 5: 6 * Wager")
+        print("Match 6: 19 * Wager")
+        print("Match 7: 90 * Wager")
+        print("Match 8: 720 * Wager")
+        print("This game of keno only allows you to choose eight numbers. No more, no less")
+
     def match(self, wager):
         count = 0
         for i in Keno.card:

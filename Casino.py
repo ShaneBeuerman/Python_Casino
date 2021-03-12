@@ -13,7 +13,11 @@ def playCards():
 
 def playKeno():
     global money
+    game = Keno()
     print("You have", money, "dollars")
+    payment =input("Would you like to see the payouts? Type y for yes, anything else for no.")
+    if payment == "y":
+        game.payout()
     while True:
         wager = input("Would you like to pay ten dollars to play keno? y/n")
         if wager == "y":
@@ -28,7 +32,6 @@ def playKeno():
             print("Sorry, not acceptable input.")
             print("Try y for yes and n for no.")
     print("Wager is", wager)
-    game = Keno()
     game.printBoard()
     game.chooseCard()
     game.markBoard()
