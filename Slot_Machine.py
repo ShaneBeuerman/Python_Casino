@@ -11,7 +11,6 @@ class wheel:
 
 class slotmachine:
     def play(self, wager):
-        print(type(wager))
         wheel1 = wheel()
         wheel2 = wheel()
         wheel3 = wheel()
@@ -45,3 +44,14 @@ class slotmachine:
             return wager * 2
         print("You lose")
         return 0
+
+    def payout(self):
+        print("Here are the payouts:")
+        print("Match 0 in any position: Free Roll")
+        print("Match two out of three:  2 * Wager")
+        print("Match three 1s :         3 * Wager")
+        print("Match three 2s :         4 * Wager")
+        print("Match three 3s :         5 * Wager")
+        print("Match three 4s :         6 * Wager")
+        print("Match three 5s :         7 * Wager")
+        

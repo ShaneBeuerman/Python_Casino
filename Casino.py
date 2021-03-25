@@ -41,7 +41,11 @@ def playKeno():
     
 def playSlots():
     global money
+    slots = slotmachine()
     print("You have", money, "dollars")
+    payouts = input("Would you like to see the payouts? Type y for yes, anything else for no.")
+    if payouts == "y":
+        slots.payout()
     while True:
         wager = input("Would you like to pay 5, 10, 50, or 100 dollars to play the slotmachine?")
         try:
@@ -58,7 +62,6 @@ def playSlots():
             money = money - wager
             break
         
-    slots = slotmachine()
     winnings = slots.play(wager)
     print("Winnings are", winnings)
     money += winnings
