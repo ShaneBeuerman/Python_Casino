@@ -6,7 +6,7 @@ from Slot_Machine import slotmachine
 money = 500
 
 def playCards():
-
+    global money
     deck = Deck()
     deck.shuffle()
     deck.printDeck()

@@ -5,18 +5,15 @@ class Deck:
     deck = []
     
     def __init__(self):
-        suits = ["Hearts", "Diamonds", "Spades", "Clubs"]
+        suits = ["♥", "◆", "♠", "♣"]
         for i in range(13):
             for j in suits:
-                Deck.deck.append(Card(i, j))
+                self.deck.append(Card(i, j))
 
     def shuffle(self):
         print("Shuffling")
-        n = len(Deck.deck)
-        for i in range(0,n):
-            rand = random.randint(0, n-1)
-            Deck.deck[i], Deck.deck[rand] = Deck.deck[rand], Deck.deck[i]
+        random.shuffle(self.deck)
 
     def printDeck(self):
-        for i in Deck.deck:
+        for i in self.deck:
             print(i.suit, i.value)
