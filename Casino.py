@@ -1,15 +1,32 @@
 #Casino
 from Deck import Deck
 from Keno import Keno
+from Blackjack import Blackjack
 from Slot_Machine import slotmachine
 
 money = 500
 
 def playCards():
     global money
-    deck = Deck()
-    deck.shuffle()
-    deck.printDeck()
+    game = Blackjack()
+    print("You have", money, "dollars")
+    payment = input("Would you like to play blackjack? Type y for yes, anything else for no.")
+    if payment == 'y':
+        wager = input("Would you like to pay ten dollars to play blackjack? y/n")
+        if wager == 'y':
+            print("Let's play")
+            wager = 10
+            money = money - wager
+            print("Wager is 10 dollars")
+            winnings = game.play(wager)
+            print("Winnings are", winnings)
+            money += winnings
+        elif wager == 'n':
+            print("Okay, we'll return you to the beginnning.")
+            return
+        else:
+            print("Sorry, not accepatble input.")
+            playCards()
 
 def playKeno():
     global money
